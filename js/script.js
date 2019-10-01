@@ -1,6 +1,6 @@
 const umaTarefa = document.querySelector(".addTarefa__button");
 const erro = document.querySelector(".meu-erro");
-const NovasTarefas= document.querySelector(".tabela")
+const NovasTarefas = document.querySelector(".tarefa")
 
 
 umaTarefa.addEventListener("click", function (evento) {
@@ -11,30 +11,37 @@ umaTarefa.addEventListener("click", function (evento) {
     if (textoTarefa === "") {
 
         erro.textContent = "Digite uma nova tarefa."
-        tarefa.value = ""
-    }
-    else {
+    } else {
 
-        let NewText = document.createElement("il");
+        let NewText = document.createElement("li");
 
         NewText.textContent = textoTarefa;
         NovasTarefas.appendChild(NewText);
+        tarefa.value = ""
+        erro.textContent = "";
+        
 
+
+        const excluirButton = document.querySelector(".excluirTarefa__button")
+
+        excluirButton.addEventListener("click", function (evento) {
+            if (NewText.parentNode) {
+                NewText.parentNode.removeChild(NewText);
+            }
+        })
+
+        const selectAllButton = document.querySelector(".SelecionarAllTarefa__button")
+
+        selectAllButton.addEventListener("dblclick", function(){
+            NovasTarefas.style.textDecoration = "line-through";
+            NovasTarefas.style.color = "grey";
+            })
+        
+        
+            // selectAllButton.addEventListener("click", function(){
+            //     selectAllButton.style.textDecoration = "none";
+            //     selectAllButton.style.color = "black";
+            // }) 
     }
-});
 
-
-const muitasTarefas = document.querySelectorAll(".tarefas")
-
-muitasTarefas.forEach(function (excluir) {
-    excluir.addEventListener("click", function (evento) {
-        if (
-            excluir.classList.contains("excluir")) {
-            excluir.classList.remove("excluir");
-
-        } else {
-            excluir.classList.add("excluir");
-        }
-
-    })
 });
