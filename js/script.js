@@ -30,3 +30,18 @@ umaTarefa.addEventListener("click", function (evento) {
     tarefa.value = ""
 });
 
+
+const muitasTarefas = document.querySelectorAll(".tarefas")
+
+muitasTarefas.forEach(function(excluir){
+    excluir.addEventListener("click", function(evento)
+    {if (
+        excluir.classList.contains("excluir")){
+        excluir.classList.remove("excluir");
+
+    } else {
+        excluir.classList.add("excluir");
+    }
+
+    })
+});

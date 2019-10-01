@@ -1,3 +1,20 @@
 body{
 background-color: #e0c3fc;
+font-family: 'Open Sans', sans-serif;
+}
+
+.tarefa__feita {
+
+    text-decoration: line-through;
+}
+
+.addTarefa__button {
+    background-color: #ba7af8;
+    color: white;
+}
+
+.excluir {
+    opacity: 0;
+    text-decoration: line-through;
+
 }
