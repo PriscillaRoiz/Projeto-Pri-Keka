@@ -41,6 +41,19 @@ umaTarefa.addEventListener("click", function (evento) {
             }
         });
 
+        const riscarTarefa = document.querySelector('.tarefa')
+
+
+        NewText.addEventListener("click", function (evento) {
+          if(NewText.style.textDecoration == "line-through"){
+            NewText.style.textDecoration = "none";
+            NewText.style.color = "black";
+          } else{
+            NewText.style.color = "grey";   
+            NewText.style.textDecoration = "line-through";
+          }
+           
+        });
 
     }
 
