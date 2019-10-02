@@ -19,18 +19,20 @@ ul {
   font-weight: 600;
   letter-spacing: 2px;
   padding: 0px;
-
+  margin-top: 127px;
 }
 
 li {
   border-bottom: 1px grey solid;
-  padding: 15px;
+  padding: 3px;
   text-align: center;
   color: grey;
   border-bottom-color: grey;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 38px;
+  font-size: 36px;
 }
 
 .container {
@@ -40,6 +42,10 @@ li {
   margin: 5% auto;
   padding: 20px 0px 5px 0px;
   border-radius: 2%;
+  width: 1016px;
+    /* height: 845px; */
+    margin-left: 202px;
+    margin-top: 203px;
 }
 
 h1 {
@@ -47,6 +53,8 @@ h1 {
   text-shadow: 0px 0px 1px rgba(7, 15, 13, 0.726);
   text-align: center;
   padding: 15px;
+  height: 108px;
+  font-size: 44px;
 }
 
 .tarefa__input {
@@ -60,6 +68,9 @@ h1 {
   font-weight: 600;
   letter-spacing: 2px;
   padding: 15px;
+  height: 154px;
+  border-color: gray;
+  font-size: 50px;
 }
 
 .tabela {
@@ -68,6 +79,7 @@ h1 {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -84,14 +96,25 @@ h1 {
   font-weight: 600;
   letter-spacing: 2px;
   padding: 15px;
+  margin-top: -10px;
   cursor: pointer;
+  height: 99px;
+    font-size: 40px;
 }
+
+
 
 .ButtonX {
   color: rgb(131, 118, 118);
   font-size: 10px;
   cursor: pointer;
   text-align: right;
+  font-size: 23px;
+}
+
+.buttons{
+  margin-top: 107px;
+  
 }
 
 .excluirTarefa__button {
@@ -104,6 +127,8 @@ h1 {
   letter-spacing: 2px;
   padding: 15px;
   cursor: pointer;
+  height: 99px;
+  font-size: 34px;
 }
 
 .SelecionarAll__button {
@@ -115,9 +140,11 @@ h1 {
   font-weight: 600;
   letter-spacing: 2px;
   padding: 15px;
+  margin-bottom: -5px;
   cursor: pointer;
   background-color: rgba(61, 161, 61, 0.644);
-
+  height: 99px;
+  font-size: 34px;
 }
 
 .excluir {
