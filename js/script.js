@@ -32,6 +32,28 @@ umaTarefa.addEventListener("click", function (evento) {
         }
         });
 
+        NewText.addEventListener("click", function (evento) {
+          if(NewText.style.textDecoration == "line-through"){
+            NewText.style.textDecoration = "none";
+            NewText.style.color = "black";
+          } else{
+            NewText.style.color = "grey";   
+            NewText.style.textDecoration = "line-through";
+          }
+        });
+
+        const SelectAll = document.querySelector(".SelecionarAll__button")
+
+        SelectAll.addEventListener("click", function (evento) {
+          if (NewText.style.backgroundColor == "pink"){
+            NewText.style.backgroundColor = "none";
+
+          } else { 
+            NewText.style.backgroundColor = "rgba(61, 161, 61, 0.644)";
+            
+        }
+        });
+
 
         const excluirButton = document.querySelector(".excluirTarefa__button")
 
@@ -41,19 +63,7 @@ umaTarefa.addEventListener("click", function (evento) {
             }
         });
 
-        const riscarTarefa = document.querySelector('.tarefa')
 
-
-        NewText.addEventListener("click", function (evento) {
-          if(NewText.style.textDecoration == "line-through"){
-            NewText.style.textDecoration = "none";
-            NewText.style.color = "black";
-          } else{
-            NewText.style.color = "grey";   
-            NewText.style.textDecoration = "line-through";
-          }
-           
-        });
 
     }
 
