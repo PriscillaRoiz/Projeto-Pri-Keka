@@ -17,8 +17,9 @@
     <div class="container">
         <div class="titulo">
             <h1> Adicionar uma nova tarefa </h1>
-
-            <input type="text" class="tarefa__input" id="InputTarefa" placeholder="Adicione uma tarefa">
+            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <input type="text" class="tarefa__input" id="InputTarefa" draggable="true" ondragstart="drag(event)"
+                placeholder="Adicione uma tarefa">
 
             <p class='meu-erro'></p>
 
