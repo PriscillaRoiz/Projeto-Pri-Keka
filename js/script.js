@@ -19,6 +19,7 @@ umaTarefa.addEventListener("click", function (evento) {
         NovasTarefas.appendChild(NewText);
         tarefa.value = ""
         erro.textContent = "";
+        
 
         const excluirButton = document.querySelector(".excluirTarefa__button")
 
@@ -28,24 +29,26 @@ umaTarefa.addEventListener("click", function (evento) {
             }
         })
 
-        const selectAllButton = document.querySelector(".tarefa")
+        // const selectAllButton = document.querySelector(".tarefa")
+        const riscarTarefa = document.querySelector('.tarefa')
 
 
-        if (selectAllButton.addEventListener("dblclick", function (evento) {
+        NewText.addEventListener("click", function (evento) {
+          if(NewText.style.textDecoration == "line-through"){
+            NewText.style.textDecoration = "none";
+            NewText.style.color = "black";
+          } else{
+            NewText.style.color = "grey";   
+            NewText.style.textDecoration = "line-through";
+          }
+           
+        });
+    }
 
-            NovasTarefas.style.textDecoration = "line-through";
-            NovasTarefas.style.color = "grey";
-        }));
 
 
-         
-
-
-
-        // selectAllButton.addEventListener("click", function(){
+});
+ // selectAllButton.addEventListener("click", function(){
         //     selectAllButton.style.textDecoration = "none";
         //     selectAllButton.style.color = "black";
         // }) 
-    }
-
-});
