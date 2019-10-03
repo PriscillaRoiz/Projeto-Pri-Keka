@@ -8,7 +8,7 @@ umaTarefa.addEventListener("click", function (evento) {
     let tarefa = document.getElementById('InputTarefa');
     let textoTarefa = tarefa.value;
 
-    if (textoTarefa === "") {
+    if (textoTarefa.trim() === "") {
         erro.textContent = "Digite uma nova tarefa."
     } else {
 
