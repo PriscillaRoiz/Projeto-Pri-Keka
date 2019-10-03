@@ -4,7 +4,7 @@ const NovasTarefas = document.querySelector(".tarefa")
 
 
 umaTarefa.addEventListener("click", function (evento) {
-
+    evento.preventDefault();
     let tarefa = document.getElementById('InputTarefa');
     let textoTarefa = tarefa.value;
 
@@ -32,6 +32,7 @@ umaTarefa.addEventListener("click", function (evento) {
         });
 
         NewText.addEventListener("click", function (evento) {
+          evento.preventDefault();
           if(NewText.style.textDecoration == "line-through"){
             NewText.style.textDecoration = "none";
             NewText.style.color = "black";
@@ -44,6 +45,7 @@ umaTarefa.addEventListener("click", function (evento) {
         const SelectAll = document.querySelector(".SelecionarAll__button")
 
         SelectAll.addEventListener("click", function (evento) {
+          evento.preventDefault();
           if (NewText.style.backgroundColor == "pink"){
             NewText.style.backgroundColor = "none";
 
@@ -65,18 +67,28 @@ umaTarefa.addEventListener("click", function (evento) {
 
 
     }
-    function allowDrop(ev) {
-        ev.preventDefault();
-      }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // function allowDrop(ev) {
+    //     ev.preventDefault();
+    //   }
       
-      function drag(ev) {
-        ev.dataTransfer.setData("tarefa", ev.target.id);
-      }
+    //   function drag(ev) {
+    //     ev.dataTransfer.setData("tarefa", ev.target.id);
+    //   }
       
-      function drop(ev) {
-        ev.preventDefault();
-        var data = ev.dataTransfer.getData("tarefa");
-        ev.target.appendChild(document.getElementById(data));
-      }
+    //   function drop(ev) {
+    //     ev.preventDefault();
+    //     var data = ev.dataTransfer.getData("tarefa");
+    //     ev.target.appendChild(document.getElementById(data));
+    //   }
       
 });
