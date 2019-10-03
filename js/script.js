@@ -13,12 +13,12 @@ umaTarefa.addEventListener("click", function (evento) {
     } else {
 
         let NewText = document.createElement("li");
-
         NewText.textContent = textoTarefa;
         NovasTarefas.appendChild(NewText);
         tarefa.value = "";
         erro.textContent = "";
-    
+        NewText.setAttribute("draggable",true)  
+
         let ButtonX = document.createElement("span");
         NewText.appendChild(ButtonX);
         ButtonX.textContent = "x";
@@ -34,7 +34,6 @@ umaTarefa.addEventListener("click", function (evento) {
         NewText.addEventListener("click", function (evento) {
           if(NewText.style.textDecoration == "line-through"){
             NewText.style.textDecoration = "none";
-            NewText.style.color = "black";
           } else{
             NewText.style.color = "grey";   
             NewText.style.textDecoration = "line-through";
@@ -44,7 +43,7 @@ umaTarefa.addEventListener("click", function (evento) {
         const SelectAll = document.querySelector(".SelecionarAll__button")
 
         SelectAll.addEventListener("click", function (evento) {
-          if (NewText.style.backgroundColor == "pink"){
+          if (NewText.style.backgroundColor == "white"){
             NewText.style.backgroundColor = "none";
 
           } else { 
@@ -61,22 +60,59 @@ umaTarefa.addEventListener("click", function (evento) {
                 NewText.parentNode.removeChild(NewText);
             }
         });
+        
+        var dragged;
 
-
+        /* events fired on the draggable target */
+        document.addEventListener("drag", function(event) {
+        
+        }, false);
+        
+        document.addEventListener("dragstart", function(event) {
+          // store a ref. on the dragged elem
+          NewText = event.target;
+          // make it half transparent
+          event.target.style.opacity = .5;
+        }, false);
+        
+        document.addEventListener("dragend", function(event) {
+          // reset the transparency
+          event.target.style.opacity = "";
+        }, false);
+        
+        /* events fired on the drop targets */
+        document.addEventListener("dragover", function(event) {
+          // prevent default to allow drop
+          NovasTarefas.preventDefault();
+        }, false);
+        
+        document.addEventListener("dragenter", function(event) {
+          // highlight potential drop target when the draggable element enters it
+          if (event.target.className == "tarefa") {
+            event.target.style.background = "purple";
+          }
+        
+        }, false);
+        
+        document.addEventListener("dragleave", function(event) {
+          // reset background of potential drop target when the draggable element leaves it
+          if (event.target.className == "tarefa") {
+            event.target.style.background = "";
+          }
+        
+        }, false);
+        
+        document.addEventListener("drop", function(event) {
+          // prevent default action (open as link for some elements)
+          event.preventDefault();
+          // move NewText elem to the selected drop target
+          if (event.target.className == "tarefa") {
+            event.target.style.background = "";
+            NewText.parentNode.removeChild( NewText );
+            event.target.appendChild( NewText );
+          }
+        }, false);
 
     }
-    function allowDrop(ev) {
-        ev.preventDefault();
-      }
-      
-      function drag(ev) {
-        ev.dataTransfer.setData("tarefa", ev.target.id);
-      }
-      
-      function drop(ev) {
-        ev.preventDefault();
-        var data = ev.dataTransfer.getData("tarefa");
-        ev.target.appendChild(document.getElementById(data));
-      }
-      
+
 });
