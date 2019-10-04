@@ -8,6 +8,8 @@ umaTarefa.addEventListener("click", function (evento) {
     let tarefa = document.getElementById('InputTarefa');
     let textoTarefa = tarefa.value;
 
+    NewText.classList.add()
+
     if (textoTarefa.trim() === "") {
         erro.textContent = "Digite uma nova tarefa."
     } else {
@@ -23,11 +25,16 @@ umaTarefa.addEventListener("click", function (evento) {
         NewText.appendChild(ButtonX);
         ButtonX.textContent = "x";
         ButtonX.classList.add("ButtonX")
+        
+
+       
+
 
         ButtonX.addEventListener("click",function(evento) {
         if (ButtonX.parentNode) {
             NovasTarefas.removeChild(NewText);
             ButtonX.textContent = "";
+           
         }
         });
 
@@ -36,6 +43,7 @@ umaTarefa.addEventListener("click", function (evento) {
           if(NewText.style.textDecoration == "line-through"){
             NewText.style.textDecoration = "none";
             NewText.style.color = "black";
+            
           } else{
             NewText.style.color = "grey";   
             NewText.style.textDecoration = "line-through";
