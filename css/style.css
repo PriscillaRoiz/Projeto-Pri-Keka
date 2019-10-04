@@ -11,8 +11,10 @@ body {
   justify-content: center;
 }
 
-ul {
-  list-style: none;
+ul { 
+  margin: 0 auto;
+  /* width: 80%; */
+  list-style-type: none; 
   width: 100%;
   display: block;
   border: none;
@@ -20,8 +22,31 @@ ul {
   font-weight: 600;
   letter-spacing: 2px;
   padding: 0px;
-  margin-top: 26px;
+  /* margin-top: 26px; */
 }
+
+ul li { 
+  cursor: move;
+  margin: 0 3px 3px 3px; 
+  padding: 0.3em; 
+  
+  font-size: 1.25em; 
+  height: 1em; 
+  
+  border: 1px solid #d3d3d3;
+	background: #e6e6e6;
+}
+
+ul div  { 
+  font-family: FontAwesome;
+  font-size: 0.5em;
+  letter-spacing: 10px;
+  width: 10px;
+}
+
+ul .up, ul .down { float: left; }
+ul .up:before { content: "\f077"; }
+ul .down:before { content: "\f078"; }
 
 li {
   border-bottom: 1px grey solid;
