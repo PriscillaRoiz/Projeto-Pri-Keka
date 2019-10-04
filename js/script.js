@@ -71,6 +71,15 @@ umaTarefa.addEventListener("click", function (evento) {
           });
           
     }
-
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 });

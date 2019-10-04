@@ -15,16 +15,14 @@
 <body>
     <form>
 
-        <div class="container">
-            <div class="titulo">
-                <h1> Adicionar uma nova tarefa </h1>
-            </div>
-            <form action="">
-                <input type="text" class="tarefa__input" id="InputTarefa" placeholder="Adicione uma tarefa">
+    <div class="container">
+        <div class="titulo">
+            <h1> Adicionar uma nova tarefa </h1>
 
                 <p class='meu-erro'></p>
 
-                <div class="addTarefa">
+        <form action="">
+            <input type="text" class="tarefa__input" id="InputTarefa" placeholder="Adicione uma tarefa">
 
                     <button class="addTarefa__button">Add</button>
 
@@ -39,18 +37,38 @@
                     </ul>
                 </div>
 
-                <div class="buttons">
+            <div class="tabela">
+
+                <ul class="tarefa">
+                    <div class="dropzone">
+                        <div id="draggable" draggable="true"
+                            ondragstart="event.dataTransfer.setData('text/plain',null)">
+                </ul>
+            </div>
+
+
+
+            <div class="buttons">
 
                     <button class="excluirTarefa__button">Deletar tudo</button>
                     <button class="SelecionarAll__button">Selecionar tudo</button>
-
+            
                 </div>
-            </form>
+        </form>
+    
 
-        </div>
+    </div>
 
 
-        <script src="./js/script.js"></script>
+
+
+
+
+
+
+
+
+    <script src="./js/script.js"></script>
 
 </body>
 
