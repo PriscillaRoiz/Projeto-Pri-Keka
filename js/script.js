@@ -65,12 +65,27 @@ umaTarefa.addEventListener("click", function (evento) {
         });
 
 
-        $(function() {
-            $( "NovasTarefas" ).sortable();
-            $( "NovasTarefas" ).disableSelection();
-          });
-          
-    }
+    let divContainer = document.querySelector (".container")
+
+    NewText.classList.add("ClassNewText");
+    NewText.setAttribute("draggable", true);
+    NovasTarefas.setAttribute("draggable", true);
+    divContainer.setAttribute("draggable", true);
+
+    // divContainer.appendChild(NewText);
+    // divContainer.appendChild(NovasTarefas);
+
+    let dragging;
+
+    NovasTarefas.addEventListener("dragstart", function(ev){
+      dragging = ev.target.closest(".ClassNewText")
+    })
+  NovasTarefas.addEventListener("dragover", function(ev){
+    ev.stopPropagation();
+    const node = ev.target.closest(".ClassNewText")
+    this.insertBefore(dragging, node)
+  })  
+  }
     
     
     
