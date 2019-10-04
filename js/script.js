@@ -77,18 +77,5 @@ umaTarefa.addEventListener("click", function (evento) {
     
     
     
-    // function allowDrop(ev) {
-    //     ev.preventDefault();
-    //   }
-      
-    //   function drag(ev) {
-    //     ev.dataTransfer.setData("tarefa", ev.target.id);
-    //   }
-      
-    //   function drop(ev) {
-    //     ev.preventDefault();
-    //     var data = ev.dataTransfer.getData("tarefa");
-    //     ev.target.appendChild(document.getElementById(data));
-    //   }
-      
+    
 });
